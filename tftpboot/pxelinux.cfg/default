@@ -1,0 +1,16 @@
+UI vesamenu.c32
+
+TIMEOUT 100
+ONTIMEOUT 1
+
+MENU TITLE BgLUG PXE Boot
+MENU BACKGROUND pxelinux.cfg/bglug.png
+
+LABEL 1
+	MENU LABEL Install a client (64-bit)
+	KERNEL ubuntu/14.04/amd64/linux
+	APPEND vga=normal initrd=ubuntu/14.04/amd64/initrd.gz ks=http://192.168.56.2/ks/ubuntu-14.04-amd64.cfg -- quiet
+	
+LABEL 2
+	MENU LABEL Boot from local hard drive
+	LOCALBOOT 0
